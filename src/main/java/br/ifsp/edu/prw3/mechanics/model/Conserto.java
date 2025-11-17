@@ -1,22 +1,28 @@
 package br.ifsp.edu.prw3.mechanics.model;
-import br.ifsp.edu.prw3.mechanics.dto.AtualizarConsertoDTO;
-import br.ifsp.edu.prw3.mechanics.dto.ConsertoDTO;
+import br.ifsp.edu.prw3.mechanics.dto.conserto.AtualizarConsertoDTO;
+import br.ifsp.edu.prw3.mechanics.dto.conserto.ConsertoDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.UUID;
+
 @Table(name="conserto")
 @Entity(name="conserto")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of="id")
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Conserto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @EqualsAndHashCode.Include
+    @Column(nullable = false, unique = true, updatable = false)
+    private final String uuid = UUID.randomUUID().toString();
 
     private String entrada;
 

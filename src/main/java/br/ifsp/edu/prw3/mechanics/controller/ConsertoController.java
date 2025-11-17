@@ -1,29 +1,29 @@
 package br.ifsp.edu.prw3.mechanics.controller;
 
-import br.ifsp.edu.prw3.mechanics.dto.AtualizarConsertoDTO;
-import br.ifsp.edu.prw3.mechanics.dto.ConsertoDTO;
-import br.ifsp.edu.prw3.mechanics.dto.ConsertoDadosPrincipaisDTO;
-import br.ifsp.edu.prw3.mechanics.dto.ConsertoDetalhadoDTO;
+import br.ifsp.edu.prw3.mechanics.dto.conserto.AtualizarConsertoDTO;
+import br.ifsp.edu.prw3.mechanics.dto.conserto.ConsertoDTO;
+import br.ifsp.edu.prw3.mechanics.dto.conserto.ConsertoDadosPrincipaisDTO;
+import br.ifsp.edu.prw3.mechanics.dto.conserto.ConsertoDetalhadoDTO;
 import br.ifsp.edu.prw3.mechanics.model.Conserto;
 import br.ifsp.edu.prw3.mechanics.repository.ConsertoRepository;
-import jakarta.transaction.Transaction;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("consertos")
 public class ConsertoController {
-    @Autowired
-    private ConsertoRepository consertoRepository;
+
+    private final  ConsertoRepository consertoRepository;
+
+    public ConsertoController(ConsertoRepository consertoRepository) {
+        this.consertoRepository = consertoRepository;
+    }
 
     @PostMapping
     @Transactional

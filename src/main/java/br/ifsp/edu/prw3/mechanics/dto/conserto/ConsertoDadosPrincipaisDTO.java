@@ -1,4 +1,4 @@
-package br.ifsp.edu.prw3.mechanics.dto;
+package br.ifsp.edu.prw3.mechanics.dto.conserto;
 
 import br.ifsp.edu.prw3.mechanics.model.Conserto;
 

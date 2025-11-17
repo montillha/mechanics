@@ -1,6 +1,4 @@
-package br.ifsp.edu.prw3.mechanics.dto;
-
-import jakarta.validation.constraints.NotNull;
+package br.ifsp.edu.prw3.mechanics.dto.conserto;
 
 public record AtualizarConsertoDTO(
        String saida,

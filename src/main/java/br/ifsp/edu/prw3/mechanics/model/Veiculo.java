@@ -1,6 +1,6 @@
 package br.ifsp.edu.prw3.mechanics.model;
 
-import br.ifsp.edu.prw3.mechanics.dto.VeiculoDTO;
+import br.ifsp.edu.prw3.mechanics.dto.conserto.VeiculoDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
